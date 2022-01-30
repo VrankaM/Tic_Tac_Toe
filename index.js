@@ -8,7 +8,7 @@ document.querySelector(".reset-button").addEventListener("click", reset);
 
 for (let i=0; i < document.querySelectorAll(".gameBoard div").length; i++){
     document.querySelectorAll(".gameBoard div")[i].addEventListener("mousedown", function(){
-        if((this.querySelector("img").getAttribute("src") == "") && (!gameFinished)){
+        if((this.querySelector("img").getAttribute("src") == "images/blank.png") && (!gameFinished)){
             if(!player){
                 this.querySelector("img").setAttribute("src","images/X.png");
                 gameField[i] = 0;
@@ -56,7 +56,7 @@ function reset(){
     result.style.color = "#686D76";
     result.innerHTML = "May the best one win";
     for(let i=0; i<9; i++){
-        document.querySelectorAll(".gameBoard div img")[i].setAttribute("src","");
+        document.querySelectorAll(".gameBoard div img")[i].setAttribute("src","images/blank.png");
     }
     for(let f=0; f < gameField.length; f++){
         gameField[f] = 2;
