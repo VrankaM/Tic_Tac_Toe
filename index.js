@@ -7,14 +7,14 @@ var player2Score = 0;
 document.querySelector(".reset-button").addEventListener("click", reset);
 
 for (let i=0; i < document.querySelectorAll(".gameBoard div").length; i++){
-    document.querySelectorAll(".gameBoard div")[i].addEventListener("mousedown", function(){
-        if((this.querySelector("img").getAttribute("src") == "images/blank.png") && (!gameFinished)){
+    document.querySelectorAll(".gameBoard div img")[i].addEventListener("click", function(){
+        if((this.getAttribute("src") == "images/blank.png") && (!gameFinished)){
             if(!player){
-                this.querySelector("img").setAttribute("src","images/X.png");
+                this.setAttribute("src","images/X.png");
                 gameField[i] = 0;
             }
             else{
-                this.querySelector("img").setAttribute("src","images/O.png");
+                this.setAttribute("src","images/O.png");
                 gameField[i] = 1;
             }
             playerChange();
